@@ -21,6 +21,20 @@ public class Television {
         this.screenType = screenType;
     }
 
+    public Television(String[] values) {
+        if (values.length != 7) {
+            throw new IllegalArgumentException("Invalid number of arguments for Television constructor");
+        }
+
+        this.brand = values[0];
+        this.model = values[1];
+        this.screenSize = Integer.parseInt(values[2]);
+        this.price = Double.parseDouble(values[3]);
+        this.refreshRate = Integer.parseInt(values[4]);
+        this.launchDate = Date.valueOf(values[5]);
+        this.screenType = values[6];
+    }
+
     public String getBrand() {
         return brand;
     }

@@ -6,23 +6,17 @@ import com.raulrh.tiendatv.base.Television;
 import javax.swing.*;
 import java.awt.*;
 import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.Arrays;
+
+import java.util.*;
 import java.util.List;
 
-public class Window {
-    private JPanel panel1;
-    private JPanel jpanel2;
-    private JPanel jpanel3;
-    private JFrame frame;
+public class TelevisionForm extends JFrame {
+    private final List<JTextField> fieldList = new ArrayList<>();
 
-    public Window() {
-        frame = new JFrame("Window");
-        frame.setTitle("Television Form");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setContentPane(panel1);
-
-        jpanel3.setLayout(new GridLayout(0, 2));
+    public TelevisionForm() {
+        setTitle("Television Form");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new GridLayout(0, 2));
 
         // Usar reflexión para crear campos
         createFields();
@@ -30,14 +24,10 @@ public class Window {
         JButton submitButton = new JButton("Submit");
         submitButton.addActionListener(e -> submitForm());
 
-        jpanel3.add(submitButton);
-
-        frame.pack();
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
+        add(submitButton);
+        pack();
+        setVisible(true);
     }
-
-    private final List<JTextField> fieldList = new ArrayList<>();
 
     private void createFields() {
         // Obtener todos los campos de la clase Television
@@ -48,8 +38,8 @@ public class Window {
             JTextField textField = new JTextField(20);
             fieldList.add(textField);
 
-            jpanel3.add(label);
-            jpanel3.add(textField);
+            add(label);
+            add(textField);
         }
     }
 
@@ -70,7 +60,7 @@ public class Window {
             System.out.println("Television created");
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(frame, e.getMessage(), "Input Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Input Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 }
