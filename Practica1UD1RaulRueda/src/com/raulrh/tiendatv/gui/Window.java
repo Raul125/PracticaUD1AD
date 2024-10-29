@@ -1,36 +1,47 @@
 package com.raulrh.tiendatv.gui;
 
+import com.raulrh.tiendatv.base.CurvedTelevision;
+import com.raulrh.tiendatv.base.GamingTelevision;
 import com.raulrh.tiendatv.base.SmartTelevision;
 import com.raulrh.tiendatv.base.Television;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Window {
-    private JPanel panel1;
-    private JPanel jpanel2;
-    private JPanel jpanel3;
+    private JPanel mainPanel;
+    private JPanel contentPanel;
+    private JPanel fieldsPanel;
+    private JRadioButton curvedTVRadioButton;
+    private JRadioButton gamingTVRadioButton;
+    private JRadioButton smartTVRadioButton;
+    private JComboBox comboBox1;
     private JFrame frame;
+
+    private Class selectedClass = CurvedTelevision.class;
 
     public Window() {
         frame = new JFrame("Window");
         frame.setTitle("Television Form");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setContentPane(panel1);
+        frame.setContentPane(mainPanel);
 
-        jpanel3.setLayout(new GridLayout(0, 2));
+        curvedTVRadioButton.setSelected(true);
+        fieldsPanel.setLayout(new GridLayout(0, 2));
 
-        // Usar reflexión para crear campos
+        setupRadioButtons();
         createFields();
 
         JButton submitButton = new JButton("Submit");
         submitButton.addActionListener(e -> submitForm());
 
-        jpanel3.add(submitButton);
+        fieldsPanel.add(submitButton);
 
         frame.pack();
         frame.setLocationRelativeTo(null);
@@ -40,37 +51,45 @@ public class Window {
     private final List<JTextField> fieldList = new ArrayList<>();
 
     private void createFields() {
-        // Obtener todos los campos de la clase Television
+        fieldsPanel.removeAll();
+        fieldList.clear();
         ArrayList<Field> televisionFields = new ArrayList<>(Arrays.asList(Television.class.getDeclaredFields()));
-        televisionFields.addAll(Arrays.asList(SmartTelevision.class.getDeclaredFields()));
+        televisionFields.addAll(Arrays.asList(selectedClass.getDeclaredFields()));
         for (Field field : televisionFields) {
             JLabel label = new JLabel(field.getName());
             JTextField textField = new JTextField(20);
             fieldList.add(textField);
 
-            jpanel3.add(label);
-            jpanel3.add(textField);
+            fieldsPanel.add(label);
+            fieldsPanel.add(textField);
         }
     }
 
     private void submitForm() {
         try {
-            // Crear un arreglo para los valores de los campos
-            /*String[] values = new String[Television.class.getDeclaredFields().length];
-            for (JTextField field : fieldList) {
-                String text = field.getText();
-                values[fieldList.indexOf(field)] = text;
-            }
-
-            // Crear el objeto Television usando los valores recogidos
-            Television tv = new Television(values);
-
-            // Aquí puedes manejar el objeto Television como desees
-            System.out.println("Television created: " + tv.getBrand());*/
             System.out.println("Television created");
-
         } catch (Exception e) {
             JOptionPane.showMessageDialog(frame, e.getMessage(), "Input Error", JOptionPane.ERROR_MESSAGE);
         }
+    }
+
+    private void setupRadioButtons() {
+        ActionListener radioButtonListener = e -> {
+            if (e.getSource() == curvedTVRadioButton) {
+                selectedClass = CurvedTelevision.class;
+            } else if (e.getSource() == gamingTVRadioButton) {
+                selectedClass = GamingTelevision.class;
+            } else if (e.getSource() == smartTVRadioButton) {
+                selectedClass = SmartTelevision.class;
+            }
+
+            createFields();
+            fieldsPanel.updateUI();
+        };
+
+        // Asignar el mismo listener a cada radio button
+        curvedTVRadioButton.addActionListener(radioButtonListener);
+        gamingTVRadioButton.addActionListener(radioButtonListener);
+        smartTVRadioButton.addActionListener(radioButtonListener);
     }
 }

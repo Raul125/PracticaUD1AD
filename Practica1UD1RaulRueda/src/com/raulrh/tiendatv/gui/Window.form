@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.raulrh.tiendatv.gui.Window">
-  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="FormLayout">
+  <grid id="27dc6" binding="mainPanel" layout-manager="FormLayout">
+    <rowspec value="center:max(d;4px):noGrow"/>
+    <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:max(d;4px):noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:max(d;4px):noGrow"/>
@@ -11,9 +13,15 @@
     <properties/>
     <border type="none"/>
     <children>
-      <grid id="56443" binding="jpanel2" layout-manager="FormLayout">
+      <grid id="56443" binding="contentPanel" layout-manager="FormLayout">
         <rowspec value="center:d:noGrow"/>
         <colspec value="fill:d:noGrow"/>
+        <colspec value="left:4dlu:noGrow"/>
+        <colspec value="fill:max(d;4px):noGrow"/>
+        <colspec value="left:4dlu:noGrow"/>
+        <colspec value="fill:max(d;4px):noGrow"/>
+        <colspec value="left:4dlu:noGrow"/>
+        <colspec value="fill:max(d;4px):noGrow"/>
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <forms/>
@@ -27,12 +35,39 @@
               <forms/>
             </constraints>
             <properties>
-              <text value="PRUEBA LABEL"/>
+              <text value="Tipo"/>
+            </properties>
+          </component>
+          <component id="3c41a" class="javax.swing.JRadioButton" binding="curvedTVRadioButton" default-binding="true">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <forms/>
+            </constraints>
+            <properties>
+              <text value="CurvedTV"/>
+            </properties>
+          </component>
+          <component id="ff268" class="javax.swing.JRadioButton" binding="gamingTVRadioButton" default-binding="true">
+            <constraints>
+              <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <forms/>
+            </constraints>
+            <properties>
+              <text value="GamingTV"/>
+            </properties>
+          </component>
+          <component id="3afd2" class="javax.swing.JRadioButton" binding="smartTVRadioButton" default-binding="true">
+            <constraints>
+              <grid row="0" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <forms/>
+            </constraints>
+            <properties>
+              <text value="SmartTV"/>
             </properties>
           </component>
         </children>
       </grid>
-      <grid id="e8639" binding="jpanel3" layout-manager="FormLayout">
+      <grid id="e8639" binding="fieldsPanel" layout-manager="FormLayout">
         <rowspec value="center:d:grow"/>
         <colspec value="fill:d:grow"/>
         <constraints>
@@ -43,6 +78,20 @@
         <border type="none"/>
         <children/>
       </grid>
+      <component id="f7ee0" class="javax.swing.JComboBox" binding="comboBox1" default-binding="true">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <forms/>
+        </constraints>
+        <properties/>
+      </component>
     </children>
   </grid>
+  <buttonGroups>
+    <group name="televisionType">
+      <member id="3c41a"/>
+      <member id="ff268"/>
+      <member id="3afd2"/>
+    </group>
+  </buttonGroups>
 </form>

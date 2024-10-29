@@ -1,6 +1,5 @@
 package com.raulrh.tiendatv;
 
-import com.raulrh.tiendatv.gui.TelevisionForm;
 import com.raulrh.tiendatv.gui.TelevisionModel;
 import com.raulrh.tiendatv.gui.Window;
 
