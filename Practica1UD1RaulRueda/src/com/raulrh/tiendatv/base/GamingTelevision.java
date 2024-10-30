@@ -4,21 +4,20 @@ import java.sql.Date;
 import java.time.LocalDate;
 
 public class GamingTelevision extends Television {
-    private int inputLag; // Measured in milliseconds
+    private double inputLag; // Measured in milliseconds
     private boolean supportsGsync; // Variable Refresh Rate
 
-    public GamingTelevision(String brand, String model, int screenSize, double price, int refreshRate, LocalDate launchDate,
-                            String screenType, int inputLag, boolean supportsGsync) {
-        super(brand, model, screenSize, price, refreshRate, launchDate, screenType);
-        this.inputLag = inputLag;
-        this.supportsGsync = supportsGsync;
+    public GamingTelevision(Object[] values) {
+        super(values);
+        this.inputLag = (Integer) values[7];
+        this.supportsGsync = (boolean) values[8];
     }
 
-    public int getInputLag() {
+    public double getInputLag() {
         return inputLag;
     }
 
-    public void setInputLag(int inputLag) {
+    public void setInputLag(double inputLag) {
         this.inputLag = inputLag;
     }
 

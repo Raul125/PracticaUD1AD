@@ -1,24 +1,22 @@
 package com.raulrh.tiendatv.base;
 
-import java.sql.Date;
-import java.time.LocalDate;
+import com.raulrh.tiendatv.base.enums.OperatingSystem;
 
 public class SmartTelevision extends Television {
-    private String operatingSystem;
+    private OperatingSystem operatingSystem;
     private boolean internetConnection;
 
-    public SmartTelevision(String brand, String model, int screenSize, double price, int refreshRate, LocalDate launchDate,
-                           String screenType, String operatingSystem, boolean internetConnection) {
-        super(brand, model, screenSize, price, refreshRate, launchDate, screenType);
-        this.operatingSystem = operatingSystem;
-        this.internetConnection = internetConnection;
+    public SmartTelevision(Object[] values) {
+        super(values);
+        this.operatingSystem = (OperatingSystem) values[7];
+        this.internetConnection = (boolean) values[8];
     }
 
-    public String getOperatingSystem() {
+    public OperatingSystem getOperatingSystem() {
         return operatingSystem;
     }
 
-    public void setOperatingSystem(String operatingSystem) {
+    public void setOperatingSystem(OperatingSystem operatingSystem) {
         this.operatingSystem = operatingSystem;
     }
 

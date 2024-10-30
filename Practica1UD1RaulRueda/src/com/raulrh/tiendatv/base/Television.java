@@ -1,5 +1,7 @@
 package com.raulrh.tiendatv.base;
 
+import com.raulrh.tiendatv.base.enums.ScreenType;
+
 import java.time.LocalDate;
 
 public class Television {
@@ -9,26 +11,16 @@ public class Television {
     protected double price;
     protected int refreshRate;
     protected LocalDate launchDate;
-    protected String screenType;
-
-    public Television(String brand, String model, int screenSize, double price, int refreshRate, LocalDate launchDate, String screenType) {
-        this.brand = brand;
-        this.model = model;
-        this.screenSize = screenSize;
-        this.price = price;
-        this.refreshRate = refreshRate;
-        this.launchDate = launchDate;
-        this.screenType = screenType;
-    }
+    protected ScreenType screenType;
 
     public Television(Object[] values) {
         this.brand = (String) values[0];
         this.model = (String) values[1];
-        this.screenSize = Integer.parseInt((String) values[2]);
-        this.price = Double.parseDouble((String) values[3]);
-        this.refreshRate = Integer.parseInt((String) values[4]);
+        this.screenSize = (Integer) values[2];
+        this.price = (Double) values[3];
+        this.refreshRate = (Integer) values[4];
         this.launchDate =  (LocalDate) values[5];
-        this.screenType = (String) values[6];
+        this.screenType = (ScreenType) values[6];
     }
 
     public String getBrand() {
@@ -79,11 +71,19 @@ public class Television {
         this.launchDate = launchDate;
     }
 
-    public String getScreenType() {
+    public ScreenType getScreenType() {
         return screenType;
     }
 
-    public void setScreenType(String screenType) {
+    public void setScreenType(ScreenType screenType) {
         this.screenType = screenType;
+    }
+
+    @Override
+    public String toString() {
+        return "Television{" +
+                "brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                '}';
     }
 }

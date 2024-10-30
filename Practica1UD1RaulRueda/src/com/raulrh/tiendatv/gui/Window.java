@@ -5,99 +5,81 @@ import com.raulrh.tiendatv.base.CurvedTelevision;
 import com.raulrh.tiendatv.base.GamingTelevision;
 import com.raulrh.tiendatv.base.SmartTelevision;
 import com.raulrh.tiendatv.base.Television;
+import com.raulrh.tiendatv.util.Util;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.lang.reflect.Field;
-import java.sql.Date;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class Window {
-    private JPanel mainPanel;
-    private JPanel contentPanel;
-    private JPanel fieldsPanel;
-    private JRadioButton curvedTVRadioButton;
-    private JRadioButton gamingTVRadioButton;
-    private JRadioButton smartTVRadioButton;
-    private JComboBox comboBox1;
-    private JFrame frame;
+    public JPanel mainPanel;
+    public JPanel topPanel;
+    public JPanel fieldsPanel;
+    public JRadioButton curvedTVRadioButton;
+    public JRadioButton gamingTVRadioButton;
+    public JRadioButton smartTVRadioButton;
+    private JPanel bottomPanel;
+    private JButton addButton;
+    private JList tvJlist;
+    private JButton importarButton;
+    private JButton exportarButton;
+    public ButtonGroup televisionType;
+    public JFrame frame;
 
-    private Class selectedClass = CurvedTelevision.class;
+    public Class<?> selectedClass = CurvedTelevision.class;
+    private final ReflectionFields reflectionFields;
+    private final TelevisionModel televisionModel;
+    public final DefaultListModel<Television> defaultListModel;
 
     public Window() {
-        frame = new JFrame("Window");
-        frame.setTitle("Television Form");
+        frame = new JFrame("Televisiones");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setContentPane(mainPanel);
 
+        Border border = BorderFactory.createEmptyBorder(10, 10, 10, 10);
+        mainPanel.setBorder(border);
+
+        reflectionFields = new ReflectionFields(this);
+        fieldsPanel.setLayout(new GridLayout(0, 2, 10, 10));
+        reflectionFields.createFields();
+
+        televisionModel = new TelevisionModel(this);
+        defaultListModel = new DefaultListModel<>();
+        tvJlist.setModel(defaultListModel);
+
         curvedTVRadioButton.setSelected(true);
-        fieldsPanel.setLayout(new GridLayout(0, 2));
-
         setupRadioButtons();
-        createFields();
 
-        JButton submitButton = new JButton("Submit");
-        submitButton.addActionListener(e -> submitForm());
+        addButton.addActionListener(e -> submitForm());
 
-        fieldsPanel.add(submitButton);
-
-        frame.setSize(650, 350);
+        frame.setSize(600, 600);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 
-    private final List<JComponent> fieldList = new ArrayList<>();
-
-    private void createFields() {
-        fieldsPanel.removeAll();
-        fieldList.clear();
-        ArrayList<Field> televisionFields = new ArrayList<>(Arrays.asList(Television.class.getDeclaredFields()));
-        televisionFields.addAll(Arrays.asList(selectedClass.getDeclaredFields()));
-        for (Field field : televisionFields) {
-            JLabel label = new JLabel(transformString(field.getName()));
-            Class<?> type = field.getType();
-            JComponent component;
-            if (type == LocalDate.class) {
-                component = new DatePicker();
-            } else {
-                component = new JTextField(1);
-            }
-
-            fieldList.add(component);
-
-            fieldsPanel.add(label);
-            fieldsPanel.add(component);
-        }
-    }
-
-    public static String transformString(String input) {
-        String[] words = input.split("(?=[A-Z])");
-        String result = String.join(" ", words);
-        return result.substring(0, 1).toUpperCase() + result.substring(1);
-    }
-
     private void submitForm() {
         try {
-            Object[] values = new Object[fieldList.size()];
-            for (JComponent field : fieldList) {
-                Object value;
-                if (field instanceof JTextField) {
-                    value = ((JTextField) field).getText();
-                } else {
-                    value = ((DatePicker) field).getDate();
-                }
+            Object[] values = new Object[reflectionFields.fieldList.size()];
+            for (JComponent field : reflectionFields.fieldList) {
+                Object value = switch (field) {
+                    case JTextField jTextField -> jTextField.getText();
+                    case DatePicker datePicker -> datePicker.getDate();
+                    case JCheckBox jCheckBox -> jCheckBox.isSelected();
+                    case JSpinner jSpinner -> jSpinner.getValue();
+                    case JComboBox<?> jComboBox -> jComboBox.getSelectedItem();
+                    default -> throw new IllegalStateException("Unexpected value: " + field);
+                };
 
-                values[fieldList.indexOf(field)] = value;
+                values[reflectionFields.fieldList.indexOf(field)] = value;
             }
 
-            Television tv = new Television(values);
+            reflectionFields.clearFields();
+            Object[] finalValues = {values};
+            Television television = (Television) selectedClass.getConstructors()[0].newInstance(finalValues);
+            televisionModel.addTelevision(television);
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(frame, e.getMessage(), "Input Error", JOptionPane.ERROR_MESSAGE);
+            Util.mensajeError(e.getMessage());
         }
     }
 
@@ -111,11 +93,9 @@ public class Window {
                 selectedClass = SmartTelevision.class;
             }
 
-            createFields();
-            fieldsPanel.updateUI();
+            reflectionFields.createFields();
         };
 
-        // Asignar el mismo listener a cada radio button
         curvedTVRadioButton.addActionListener(radioButtonListener);
         gamingTVRadioButton.addActionListener(radioButtonListener);
         smartTVRadioButton.addActionListener(radioButtonListener);
