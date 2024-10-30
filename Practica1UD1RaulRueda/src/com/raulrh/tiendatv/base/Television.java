@@ -1,6 +1,9 @@
 package com.raulrh.tiendatv.base;
 
 import com.raulrh.tiendatv.base.enums.ScreenType;
+import com.raulrh.tiendatv.util.LocalDateAdapter;
+import jakarta.xml.bind.annotation.XmlTransient;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import java.time.LocalDate;
 
@@ -10,7 +13,10 @@ public class Television {
     protected int screenSize;
     protected double price;
     protected int refreshRate;
+
+    @XmlJavaTypeAdapter(LocalDateAdapter.class)
     protected LocalDate launchDate;
+
     protected ScreenType screenType;
 
     public Television(Object[] values) {
@@ -21,6 +27,9 @@ public class Television {
         this.refreshRate = (Integer) values[4];
         this.launchDate =  (LocalDate) values[5];
         this.screenType = (ScreenType) values[6];
+    }
+
+    public Television() {
     }
 
     public String getBrand() {
@@ -63,6 +72,7 @@ public class Television {
         this.refreshRate = refreshRate;
     }
 
+    @XmlTransient
     public LocalDate getLaunchDate() {
         return launchDate;
     }

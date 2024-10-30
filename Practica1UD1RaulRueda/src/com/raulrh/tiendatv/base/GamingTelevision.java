@@ -1,16 +1,17 @@
 package com.raulrh.tiendatv.base;
 
-import java.sql.Date;
-import java.time.LocalDate;
-
 public class GamingTelevision extends Television {
     private double inputLag; // Measured in milliseconds
     private boolean supportsGsync; // Variable Refresh Rate
 
     public GamingTelevision(Object[] values) {
         super(values);
-        this.inputLag = (Integer) values[7];
+        this.inputLag = (Double) values[7];
         this.supportsGsync = (boolean) values[8];
+    }
+
+    public GamingTelevision() {
+
     }
 
     public double getInputLag() {

@@ -12,6 +12,10 @@ public class SmartTelevision extends Television {
         this.internetConnection = (boolean) values[8];
     }
 
+    public SmartTelevision() {
+
+    }
+
     public OperatingSystem getOperatingSystem() {
         return operatingSystem;
     }

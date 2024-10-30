@@ -14,6 +14,10 @@ public class TelevisionModel {
       this.televisions = new ArrayList<>();
    }
 
+   public ArrayList<Television> getTelevisions() {
+      return televisions;
+   }
+
    public void addTelevision(Television television) {
       televisions.add(television);
       window.defaultListModel.addElement(television);

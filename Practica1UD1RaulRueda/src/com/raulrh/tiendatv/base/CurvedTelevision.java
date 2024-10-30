@@ -8,11 +8,22 @@ public class CurvedTelevision extends Television {
         this.curvatureDegree = (Integer) values[7];
     }
 
+    public CurvedTelevision() {
+
+    }
+
     public int getCurvatureDegree() {
         return curvatureDegree;
     }
 
     public void setCurvatureDegree(int curvatureDegree) {
         this.curvatureDegree = curvatureDegree;
+    }
+
+    @Override
+    public String toString() {
+        return "CurvedTelevision{" +
+                "curvatureDegree=" + curvatureDegree +
+                '}';
     }
 }

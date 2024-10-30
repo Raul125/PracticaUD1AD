@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<televisions>
+    <curvedTelevision>
+        <brand>1</brand>
+        <launchDate/>
+        <model>1</model>
+        <price>0.0</price>
+        <refreshRate>0</refreshRate>
+        <screenSize>0</screenSize>
+        <screenType>OLED</screenType>
+        <curvatureDegree>0</curvatureDegree>
+    </curvedTelevision>
+</televisions>
