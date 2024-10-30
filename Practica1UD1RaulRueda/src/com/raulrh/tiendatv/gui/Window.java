@@ -1,5 +1,6 @@
 package com.raulrh.tiendatv.gui;
 
+import com.github.lgooddatepicker.components.DatePicker;
 import com.raulrh.tiendatv.base.CurvedTelevision;
 import com.raulrh.tiendatv.base.GamingTelevision;
 import com.raulrh.tiendatv.base.SmartTelevision;
@@ -10,6 +11,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.lang.reflect.Field;
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -43,12 +46,12 @@ public class Window {
 
         fieldsPanel.add(submitButton);
 
-        frame.pack();
+        frame.setSize(650, 350);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 
-    private final List<JTextField> fieldList = new ArrayList<>();
+    private final List<JComponent> fieldList = new ArrayList<>();
 
     private void createFields() {
         fieldsPanel.removeAll();
@@ -56,18 +59,43 @@ public class Window {
         ArrayList<Field> televisionFields = new ArrayList<>(Arrays.asList(Television.class.getDeclaredFields()));
         televisionFields.addAll(Arrays.asList(selectedClass.getDeclaredFields()));
         for (Field field : televisionFields) {
-            JLabel label = new JLabel(field.getName());
-            JTextField textField = new JTextField(20);
-            fieldList.add(textField);
+            JLabel label = new JLabel(transformString(field.getName()));
+            Class<?> type = field.getType();
+            JComponent component;
+            if (type == LocalDate.class) {
+                component = new DatePicker();
+            } else {
+                component = new JTextField(1);
+            }
+
+            fieldList.add(component);
 
             fieldsPanel.add(label);
-            fieldsPanel.add(textField);
+            fieldsPanel.add(component);
         }
+    }
+
+    public static String transformString(String input) {
+        String[] words = input.split("(?=[A-Z])");
+        String result = String.join(" ", words);
+        return result.substring(0, 1).toUpperCase() + result.substring(1);
     }
 
     private void submitForm() {
         try {
-            System.out.println("Television created");
+            Object[] values = new Object[fieldList.size()];
+            for (JComponent field : fieldList) {
+                Object value;
+                if (field instanceof JTextField) {
+                    value = ((JTextField) field).getText();
+                } else {
+                    value = ((DatePicker) field).getDate();
+                }
+
+                values[fieldList.indexOf(field)] = value;
+            }
+
+            Television tv = new Television(values);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(frame, e.getMessage(), "Input Error", JOptionPane.ERROR_MESSAGE);
         }

@@ -1,6 +1,6 @@
 package com.raulrh.tiendatv.base;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 public class Television {
     protected String brand;
@@ -8,10 +8,10 @@ public class Television {
     protected int screenSize;
     protected double price;
     protected int refreshRate;
-    protected Date launchDate;
+    protected LocalDate launchDate;
     protected String screenType;
 
-    public Television(String brand, String model, int screenSize, double price, int refreshRate, Date launchDate, String screenType) {
+    public Television(String brand, String model, int screenSize, double price, int refreshRate, LocalDate launchDate, String screenType) {
         this.brand = brand;
         this.model = model;
         this.screenSize = screenSize;
@@ -21,18 +21,14 @@ public class Television {
         this.screenType = screenType;
     }
 
-    public Television(String[] values) {
-        if (values.length != 7) {
-            throw new IllegalArgumentException("Invalid number of arguments for Television constructor");
-        }
-
-        this.brand = values[0];
-        this.model = values[1];
-        this.screenSize = Integer.parseInt(values[2]);
-        this.price = Double.parseDouble(values[3]);
-        this.refreshRate = Integer.parseInt(values[4]);
-        this.launchDate = Date.valueOf(values[5]);
-        this.screenType = values[6];
+    public Television(Object[] values) {
+        this.brand = (String) values[0];
+        this.model = (String) values[1];
+        this.screenSize = Integer.parseInt((String) values[2]);
+        this.price = Double.parseDouble((String) values[3]);
+        this.refreshRate = Integer.parseInt((String) values[4]);
+        this.launchDate =  (LocalDate) values[5];
+        this.screenType = (String) values[6];
     }
 
     public String getBrand() {
@@ -75,11 +71,11 @@ public class Television {
         this.refreshRate = refreshRate;
     }
 
-    public Date getLaunchDate() {
+    public LocalDate getLaunchDate() {
         return launchDate;
     }
 
-    public void setLaunchDate(Date launchDate) {
+    public void setLaunchDate(LocalDate launchDate) {
         this.launchDate = launchDate;
     }
 
