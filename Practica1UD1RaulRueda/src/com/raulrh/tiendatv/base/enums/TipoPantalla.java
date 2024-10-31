@@ -1,6 +1,6 @@
 package com.raulrh.tiendatv.base.enums;
 
-public enum ScreenType {
+public enum TipoPantalla {
     OLED,
     AMOLED,
     QLED,

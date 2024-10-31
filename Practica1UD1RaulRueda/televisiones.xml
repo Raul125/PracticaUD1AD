@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <televisions>
     <curvedTelevision>
-        <launchDate>2024-10-17</launchDate>
-        <brand>asd</brand>
-        <model>asd</model>
-        <price>0.1</price>
-        <refreshRate>1</refreshRate>
-        <screenSize>1</screenSize>
-        <screenType>OLED</screenType>
-        <curvatureDegree>1</curvatureDegree>
+        <fechaLanzamiento>2024-10-09</fechaLanzamiento>
+        <marca>Hola</marca>
+        <medidasPantalla>25</medidasPantalla>
+        <modelo>Hola Adios</modelo>
+        <precio>0.30000000000000004</precio>
+        <screenType>QLED</screenType>
+        <tasaRefresco>1</tasaRefresco>
+        <gradosCurvatura>8</gradosCurvatura>
     </curvedTelevision>
 </televisions>

@@ -55,6 +55,7 @@ public class Window {
     }
 
     private JFrame initializeFrame() {
+        FlatIntelliJLaf.setup();
         JFrame frame = new JFrame("Televisiones");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(600, 600);
@@ -64,12 +65,6 @@ public class Window {
     }
 
     private void setupUI() {
-        try {
-            UIManager.setLookAndFeel(new FlatIntelliJLaf());
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-
         frame.setContentPane(mainPanel);
         mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 

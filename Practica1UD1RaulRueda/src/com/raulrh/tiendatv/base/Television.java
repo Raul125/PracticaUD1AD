@@ -1,6 +1,6 @@
 package com.raulrh.tiendatv.base;
 
-import com.raulrh.tiendatv.base.enums.ScreenType;
+import com.raulrh.tiendatv.base.enums.TipoPantalla;
 import com.raulrh.tiendatv.util.LocalDateAdapter;
 import jakarta.xml.bind.annotation.XmlTransient;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -8,89 +8,89 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.LocalDate;
 
 public class Television {
-    protected String brand;
-    protected String model;
-    protected int screenSize;
-    protected double price;
-    protected int refreshRate;
+    protected String marca;
+    protected String modelo;
+    protected int medidasPantalla;
+    protected double precio;
+    protected int tasaRefresco;
 
     @XmlJavaTypeAdapter(LocalDateAdapter.class)
-    protected LocalDate launchDate;
+    protected LocalDate fechaLanzamiento;
 
-    protected ScreenType screenType;
+    protected TipoPantalla tipoPantalla;
 
     public Television(Object[] values) {
-        this.brand = (String) values[0];
-        this.model = (String) values[1];
-        this.screenSize = (Integer) values[2];
-        this.price = (Double) values[3];
-        this.refreshRate = (Integer) values[4];
-        this.launchDate =  (LocalDate) values[5];
-        this.screenType = (ScreenType) values[6];
+        this.marca = (String) values[0];
+        this.modelo = (String) values[1];
+        this.medidasPantalla = (Integer) values[2];
+        this.precio = (Double) values[3];
+        this.tasaRefresco = (Integer) values[4];
+        this.fechaLanzamiento =  (LocalDate) values[5];
+        this.tipoPantalla = (TipoPantalla) values[6];
     }
 
     public Television() {
     }
 
-    public String getBrand() {
-        return brand;
+    public String getMarca() {
+        return marca;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setMarca(String marca) {
+        this.marca = marca;
     }
 
-    public String getModel() {
-        return model;
+    public String getModelo() {
+        return modelo;
     }
 
-    public void setModel(String model) {
-        this.model = model;
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
     }
 
-    public int getScreenSize() {
-        return screenSize;
+    public int getMedidasPantalla() {
+        return medidasPantalla;
     }
 
-    public void setScreenSize(int screenSize) {
-        this.screenSize = screenSize;
+    public void setMedidasPantalla(int medidasPantalla) {
+        this.medidasPantalla = medidasPantalla;
     }
 
-    public double getPrice() {
-        return price;
+    public double getPrecio() {
+        return precio;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setPrecio(double precio) {
+        this.precio = precio;
     }
 
-    public int getRefreshRate() {
-        return refreshRate;
+    public int getTasaRefresco() {
+        return tasaRefresco;
     }
 
-    public void setRefreshRate(int refreshRate) {
-        this.refreshRate = refreshRate;
+    public void setTasaRefresco(int tasaRefresco) {
+        this.tasaRefresco = tasaRefresco;
     }
 
     @XmlTransient
-    public LocalDate getLaunchDate() {
-        return launchDate;
+    public LocalDate getFechaLanzamiento() {
+        return fechaLanzamiento;
     }
 
-    public void setLaunchDate(LocalDate launchDate) {
-        this.launchDate = launchDate;
+    public void setFechaLanzamiento(LocalDate fechaLanzamiento) {
+        this.fechaLanzamiento = fechaLanzamiento;
     }
 
-    public ScreenType getScreenType() {
-        return screenType;
+    public TipoPantalla getScreenType() {
+        return tipoPantalla;
     }
 
-    public void setScreenType(ScreenType screenType) {
-        this.screenType = screenType;
+    public void setScreenType(TipoPantalla tipoPantalla) {
+        this.tipoPantalla = tipoPantalla;
     }
 
     @Override
     public String toString() {
-        return " - Marca: " + brand + ", Modelo: " + model;
+        return " - Marca: " + marca + ", Modelo: " + modelo;
     }
 }

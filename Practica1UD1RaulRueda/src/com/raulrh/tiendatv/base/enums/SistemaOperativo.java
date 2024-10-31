@@ -1,6 +1,6 @@
 package com.raulrh.tiendatv.base.enums;
 
-public enum OperatingSystem {
+public enum SistemaOperativo {
     ANDROIDTV,
     TIZEN,
     WEBOS,

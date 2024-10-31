@@ -1,23 +1,23 @@
 package com.raulrh.tiendatv.base;
 
 public class CurvedTelevision extends Television {
-    private int curvatureDegree;
+    private int gradosCurvatura;
 
     public CurvedTelevision(Object[] values) {
         super(values);
-        this.curvatureDegree = (Integer) values[7];
+        this.gradosCurvatura = (Integer) values[7];
     }
 
     public CurvedTelevision() {
 
     }
 
-    public int getCurvatureDegree() {
-        return curvatureDegree;
+    public int getGradosCurvatura() {
+        return gradosCurvatura;
     }
 
-    public void setCurvatureDegree(int curvatureDegree) {
-        this.curvatureDegree = curvatureDegree;
+    public void setGradosCurvatura(int gradosCurvatura) {
+        this.gradosCurvatura = gradosCurvatura;
     }
 
     @Override

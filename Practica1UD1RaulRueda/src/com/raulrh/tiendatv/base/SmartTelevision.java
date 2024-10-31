@@ -1,35 +1,35 @@
 package com.raulrh.tiendatv.base;
 
-import com.raulrh.tiendatv.base.enums.OperatingSystem;
+import com.raulrh.tiendatv.base.enums.SistemaOperativo;
 
 public class SmartTelevision extends Television {
-    private OperatingSystem operatingSystem;
-    private boolean internetConnection;
+    private SistemaOperativo sistemaOperativo;
+    private boolean conexionInternet;
 
     public SmartTelevision(Object[] values) {
         super(values);
-        this.operatingSystem = (OperatingSystem) values[7];
-        this.internetConnection = (boolean) values[8];
+        this.sistemaOperativo = (SistemaOperativo) values[7];
+        this.conexionInternet = (boolean) values[8];
     }
 
     public SmartTelevision() {
 
     }
 
-    public OperatingSystem getOperatingSystem() {
-        return operatingSystem;
+    public SistemaOperativo getOperatingSystem() {
+        return sistemaOperativo;
     }
 
-    public void setOperatingSystem(OperatingSystem operatingSystem) {
-        this.operatingSystem = operatingSystem;
+    public void setOperatingSystem(SistemaOperativo sistemaOperativo) {
+        this.sistemaOperativo = sistemaOperativo;
     }
 
-    public boolean isInternetConnection() {
-        return internetConnection;
+    public boolean isConexionInternet() {
+        return conexionInternet;
     }
 
-    public void setInternetConnection(boolean internetConnection) {
-        this.internetConnection = internetConnection;
+    public void setConexionInternet(boolean conexionInternet) {
+        this.conexionInternet = conexionInternet;
     }
 
     @Override

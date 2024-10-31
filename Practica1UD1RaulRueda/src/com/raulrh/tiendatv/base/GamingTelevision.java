@@ -2,12 +2,12 @@ package com.raulrh.tiendatv.base;
 
 public class GamingTelevision extends Television {
     private double inputLag; // Measured in milliseconds
-    private boolean supportsGsync; // Variable Refresh Rate
+    private boolean soportaGsync; // Variable Refresh Rate
 
     public GamingTelevision(Object[] values) {
         super(values);
         this.inputLag = (Double) values[7];
-        this.supportsGsync = (boolean) values[8];
+        this.soportaGsync = (boolean) values[8];
     }
 
     public GamingTelevision() {
@@ -22,12 +22,12 @@ public class GamingTelevision extends Television {
         this.inputLag = inputLag;
     }
 
-    public boolean isSupportsGsync() {
-        return supportsGsync;
+    public boolean isSoportaGsync() {
+        return soportaGsync;
     }
 
-    public void setSupportsGsync(boolean supportsGsync) {
-        this.supportsGsync = supportsGsync;
+    public void setSoportaGsync(boolean soportaGsync) {
+        this.soportaGsync = soportaGsync;
     }
 
     @Override
