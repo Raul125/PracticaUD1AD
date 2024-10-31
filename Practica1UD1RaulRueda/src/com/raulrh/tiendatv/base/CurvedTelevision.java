@@ -22,8 +22,6 @@ public class CurvedTelevision extends Television {
 
     @Override
     public String toString() {
-        return "CurvedTelevision{" +
-                "curvatureDegree=" + curvatureDegree +
-                '}';
+        return "Televisión curva " + super.toString();
     }
 }

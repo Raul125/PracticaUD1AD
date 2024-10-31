@@ -31,4 +31,9 @@ public class SmartTelevision extends Television {
     public void setInternetConnection(boolean internetConnection) {
         this.internetConnection = internetConnection;
     }
+
+    @Override
+    public String toString() {
+        return "Smart tv " + super.toString();
+    }
 }

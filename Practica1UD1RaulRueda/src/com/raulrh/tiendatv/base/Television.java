@@ -91,9 +91,6 @@ public class Television {
 
     @Override
     public String toString() {
-        return "Television{" +
-                "brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                '}';
+        return " - Marca: " + brand + ", Modelo: " + model;
     }
 }

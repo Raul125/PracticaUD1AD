@@ -10,5 +10,9 @@
     <orderEntry type="library" name="jgoodies-common-1.8.1" level="project" />
     <orderEntry type="library" name="gson-2.11.0" level="project" />
     <orderEntry type="library" name="angus-activation" level="project" />
+    <orderEntry type="library" name="JnaFileChooser" level="project" />
+    <orderEntry type="library" name="jna-5.13.0" level="project" />
+    <orderEntry type="library" name="LGoodDatePicker-11.2.1" level="project" />
+    <orderEntry type="library" name="flatlaf-3.5.2" level="project" />
   </component>
 </module>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <televisions>
     <curvedTelevision>
-        <brand>1</brand>
-        <launchDate/>
-        <model>1</model>
-        <price>0.0</price>
-        <refreshRate>0</refreshRate>
-        <screenSize>0</screenSize>
+        <launchDate>2024-10-17</launchDate>
+        <brand>asd</brand>
+        <model>asd</model>
+        <price>0.1</price>
+        <refreshRate>1</refreshRate>
+        <screenSize>1</screenSize>
         <screenType>OLED</screenType>
-        <curvatureDegree>0</curvatureDegree>
+        <curvatureDegree>1</curvatureDegree>
     </curvedTelevision>
 </televisions>

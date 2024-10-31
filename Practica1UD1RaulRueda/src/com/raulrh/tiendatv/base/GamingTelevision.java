@@ -29,4 +29,9 @@ public class GamingTelevision extends Television {
     public void setSupportsGsync(boolean supportsGsync) {
         this.supportsGsync = supportsGsync;
     }
+
+    @Override
+    public String toString() {
+        return "Televisión gaming " + super.toString();
+    }
 }

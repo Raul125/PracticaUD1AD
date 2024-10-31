@@ -1,5 +1,9 @@
 package com.raulrh.tiendatv.gui;
 
+import com.formdev.flatlaf.FlatDarkLaf;
+import com.formdev.flatlaf.FlatIntelliJLaf;
+import com.formdev.flatlaf.FlatLightLaf;
+import com.formdev.flatlaf.themes.FlatMacLightLaf;
 import com.github.lgooddatepicker.components.DatePicker;
 import com.raulrh.tiendatv.base.*;
 import com.raulrh.tiendatv.util.Util;
@@ -7,10 +11,13 @@ import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Marshaller;
 import jakarta.xml.bind.Unmarshaller;
+import jnafilechooser.api.JnaFileChooser;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.File;
 
 public class Window {
@@ -58,7 +65,7 @@ public class Window {
 
     private void setupUI() {
         try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            UIManager.setLookAndFeel(new FlatIntelliJLaf());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -94,8 +101,22 @@ public class Window {
 
     private void initializeActionListeners() {
         addButton.addActionListener(e -> submitForm());
-        importarButton.addActionListener(e -> loadFromXML("televisiones.xml"));
+        importarButton.addActionListener(e -> loadFromXML());
         exportarButton.addActionListener(e -> saveToXML());
+
+        tvJlist.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if (e.getClickCount() == 2) {  // Detectar doble clic
+                    int index = tvJlist.locationToIndex(e.getPoint());
+                    if (index != -1) {
+                        Television selectedObject = tvJlist.getModel().getElementAt(index);
+                        TelevisionInfoWindow infoWindow = new TelevisionInfoWindow(selectedObject);
+                        infoWindow.setVisible(true);
+                    }
+                }
+            }
+        });
     }
 
     private void submitForm() {
@@ -110,7 +131,7 @@ public class Window {
             Television television = createTelevisionInstance(values);
             televisionModel.addTelevision(television);
         } catch (Exception e) {
-            Util.mensajeError(e.getMessage());
+            Util.showError(e.getMessage());
         }
     }
 
@@ -132,34 +153,40 @@ public class Window {
 
     public void saveToXML() {
         try {
-            JFileChooser selectorFichero = Util.crearSelectorFichero(null,"Archivos XML","xml");
-            int result = selectorFichero.showSaveDialog(null);
-            if (result==JFileChooser.APPROVE_OPTION) {
+            JnaFileChooser fc = new JnaFileChooser();
+            fc.addFilter("Xml", "xml");
+            if (fc.showSaveDialog(frame)) {
+                File file = fc.getSelectedFile();
                 TelevisionList televisionList = new TelevisionList(televisionModel.getTelevisions());
                 JAXBContext context = JAXBContext.newInstance(TelevisionList.class);
                 Marshaller marshaller = context.createMarshaller();
                 marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-                marshaller.marshal(televisionList, selectorFichero.getSelectedFile());
+                marshaller.marshal(televisionList, file);
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
-    public void loadFromXML(String filePath) {
+    public void loadFromXML() {
         try {
-            TelevisionList televisionList = deserializeFromXML(filePath);
-            for (Television television : televisionList.getTelevisions()) {
-                televisionModel.addTelevision(television);
+            JnaFileChooser fc = new JnaFileChooser();
+            fc.addFilter("Xml", "xml");
+            if (fc.showOpenDialog(frame)) {
+                File file = fc.getSelectedFile();
+                TelevisionList televisionList = deserializeFromXML(file);
+                for (Television television : televisionList.getTelevisions()) {
+                    televisionModel.addTelevision(television);
+                }
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
-    private TelevisionList deserializeFromXML(String filePath) throws JAXBException {
+    private TelevisionList deserializeFromXML(File file) throws JAXBException {
         JAXBContext context = JAXBContext.newInstance(TelevisionList.class);
         Unmarshaller unmarshaller = context.createUnmarshaller();
-        return (TelevisionList) unmarshaller.unmarshal(new File(filePath));
+        return (TelevisionList) unmarshaller.unmarshal(file);
     }
 }
