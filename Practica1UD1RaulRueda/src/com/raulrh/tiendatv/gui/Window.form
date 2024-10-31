@@ -18,6 +18,8 @@
       <grid id="56443" binding="topPanel" layout-manager="FormLayout">
         <rowspec value="center:max(d;4px):noGrow"/>
         <rowspec value="top:4dlu:noGrow"/>
+        <rowspec value="center:max(d;4px):noGrow"/>
+        <rowspec value="top:4dlu:noGrow"/>
         <rowspec value="center:d:noGrow"/>
         <colspec value="fill:d:noGrow"/>
         <colspec value="left:83dlu:noGrow"/>
@@ -25,7 +27,8 @@
         <colspec value="left:4dlu:noGrow"/>
         <colspec value="fill:max(d;4px):noGrow"/>
         <colspec value="left:4dlu:noGrow"/>
-        <colspec value="fill:183px:noGrow"/>
+        <colspec value="fill:74px:noGrow"/>
+        <colspec value="left:73dlu:noGrow"/>
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <forms/>
@@ -35,7 +38,7 @@
         <children>
           <component id="e07a6" class="javax.swing.JLabel">
             <constraints>
-              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
               <forms/>
             </constraints>
             <properties>
@@ -44,34 +47,25 @@
           </component>
           <component id="ff268" class="javax.swing.JRadioButton" binding="gamingTVRadioButton" default-binding="true">
             <constraints>
-              <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="4" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
               <forms/>
             </constraints>
             <properties>
               <text value="GamingTV"/>
             </properties>
           </component>
-          <component id="3afd2" class="javax.swing.JRadioButton" binding="smartTVRadioButton" default-binding="true">
-            <constraints>
-              <grid row="2" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-              <forms/>
-            </constraints>
-            <properties>
-              <text value="SmartTV"/>
-            </properties>
-          </component>
           <component id="3c41a" class="javax.swing.JRadioButton" binding="curvedTVRadioButton" default-binding="true">
             <constraints>
-              <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
               <forms/>
             </constraints>
             <properties>
               <text value="CurvedTV"/>
             </properties>
           </component>
-          <component id="251fc" class="javax.swing.JLabel">
+          <component id="251fc" class="javax.swing.JLabel" binding="titleLabel">
             <constraints>
-              <grid row="0" column="0" row-span="1" col-span="7" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="0" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
               <forms defaultalign-vert="false"/>
             </constraints>
             <properties>
@@ -79,6 +73,24 @@
               <horizontalAlignment value="0"/>
               <text value="Televisiones"/>
               <verticalTextPosition value="0"/>
+            </properties>
+          </component>
+          <component id="5bccd" class="javax.swing.JButton" binding="toggleMode">
+            <constraints>
+              <grid row="0" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <forms/>
+            </constraints>
+            <properties>
+              <text value="Modo Oscuro"/>
+            </properties>
+          </component>
+          <component id="3afd2" class="javax.swing.JRadioButton" binding="smartTVRadioButton" default-binding="true">
+            <constraints>
+              <grid row="4" column="6" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <forms/>
+            </constraints>
+            <properties>
+              <text value="SmartTV"/>
             </properties>
           </component>
         </children>

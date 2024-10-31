@@ -1,10 +1,9 @@
 package com.raulrh.tiendatv.gui;
 
-import com.formdev.flatlaf.FlatDarkLaf;
+import com.formdev.flatlaf.FlatDarculaLaf;
 import com.formdev.flatlaf.FlatIntelliJLaf;
-import com.formdev.flatlaf.FlatLightLaf;
-import com.formdev.flatlaf.themes.FlatMacLightLaf;
 import com.github.lgooddatepicker.components.DatePicker;
+import com.raulrh.tiendatv.Main;
 import com.raulrh.tiendatv.base.*;
 import com.raulrh.tiendatv.util.Util;
 import jakarta.xml.bind.JAXBContext;
@@ -18,6 +17,7 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.WindowAdapter;
 import java.io.File;
 
 public class Window {
@@ -34,6 +34,8 @@ public class Window {
     private JList<Television> tvJlist;
     private JButton importarButton;
     private JButton exportarButton;
+    private JButton toggleMode;
+    private JLabel titleLabel;
     public ButtonGroup televisionType;
     public JFrame frame;
 
@@ -43,21 +45,31 @@ public class Window {
     private final TelevisionModel televisionModel;
     public final DefaultListModel<Television> defaultListModel;
 
+    private boolean isDarkMode;
+
     public Window() {
         this.frame = initializeFrame();
         this.reflectionFields = new ReflectionFields(this);
         this.televisionModel = new TelevisionModel(this);
         this.defaultListModel = new DefaultListModel<>();
 
+        isDarkMode = Main.preferences.isDarkMode();
         setupUI();
         initializeRadioButtonListeners();
         initializeActionListeners();
     }
 
     private JFrame initializeFrame() {
-        FlatIntelliJLaf.setup();
         JFrame frame = new JFrame("Televisiones");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        frame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                Main.savePreferences(Main.preferences);
+                System.exit(0);
+            }
+        });
+
         frame.setSize(600, 600);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
@@ -65,6 +77,8 @@ public class Window {
     }
 
     private void setupUI() {
+        titleLabel.putClientProperty("FlatLaf.styleClass", "h1");
+
         frame.setContentPane(mainPanel);
         mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
@@ -98,6 +112,19 @@ public class Window {
         addButton.addActionListener(e -> submitForm());
         importarButton.addActionListener(e -> loadFromXML());
         exportarButton.addActionListener(e -> saveToXML());
+        toggleMode.addActionListener(e -> {
+            if (isDarkMode) {
+                FlatIntelliJLaf.setup();
+                toggleMode.setText("Modo Oscuro");
+            } else {
+                FlatDarculaLaf.setup();
+                toggleMode.setText("Modo Claro");
+            }
+
+            FlatIntelliJLaf.updateUI();
+            isDarkMode = !isDarkMode;
+            Main.preferences.setDarkMode(isDarkMode);
+        });
 
         tvJlist.addMouseListener(new MouseAdapter() {
             @Override
