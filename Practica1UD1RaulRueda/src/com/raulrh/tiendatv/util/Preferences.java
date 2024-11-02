@@ -8,6 +8,9 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * The type Preferences.
+ */
 public class Preferences {
     private static Preferences instance;
     private static final String FILE_NAME = "preferences.json";
@@ -18,18 +21,36 @@ public class Preferences {
 
     private boolean darkMode;
 
+    /**
+     * Instantiates a new Preferences.
+     */
     public Preferences() {
 
     }
 
+    /**
+     * Is dark mode boolean.
+     *
+     * @return the boolean
+     */
     public boolean isDarkMode() {
         return darkMode;
     }
 
+    /**
+     * Sets dark mode.
+     *
+     * @param darkMode the dark mode
+     */
     public void setDarkMode(boolean darkMode) {
         this.darkMode = darkMode;
     }
 
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
     public static Preferences getInstance() {
         if (instance == null) {
             instance = loadPreferences();
@@ -51,6 +72,9 @@ public class Preferences {
         }
     }
 
+    /**
+     * Save preferences.
+     */
     public static void savePreferences() {
         File folder = new File(APPDATA_PATH + File.separator + FOLDER_NAME);
         if (!folder.exists() && !folder.mkdir()) {

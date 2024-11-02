@@ -23,6 +23,9 @@ import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.List;
 
+/**
+ * The type Television controller.
+ */
 public class TelevisionController {
     private final Window vista;
     private final TelevisionModel modelo;
@@ -33,6 +36,12 @@ public class TelevisionController {
     private Class<?> selectedClass = CurvedTelevision.class;
     private Television televisionToEdit;
 
+    /**
+     * Instantiates a new Television controller.
+     *
+     * @param vista  the vista
+     * @param modelo the modelo
+     */
     public TelevisionController(Window vista, TelevisionModel modelo) {
         this.vista = vista;
         this.modelo = modelo;

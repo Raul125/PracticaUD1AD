@@ -11,15 +11,31 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * The type Reflection fields.
+ */
 public class ReflectionFields {
     private final Window window;
+    /**
+     * The Field list.
+     */
     public final List<JComponent> fieldList;
 
+    /**
+     * Instantiates a new Reflection fields.
+     *
+     * @param window the window
+     */
     public ReflectionFields(Window window) {
         this.window = window;
         fieldList = new ArrayList<>();
     }
 
+    /**
+     * Create fields.
+     *
+     * @param selectedClass the selected class
+     */
     public void createFields(Class<?> selectedClass) {
         window.fieldsPanel.removeAll();
         fieldList.clear();
@@ -56,6 +72,9 @@ public class ReflectionFields {
         }
     }
 
+    /**
+     * Clear fields.
+     */
     public void clearFields() {
         for (JComponent field : fieldList) {
             if (field instanceof JTextField) {

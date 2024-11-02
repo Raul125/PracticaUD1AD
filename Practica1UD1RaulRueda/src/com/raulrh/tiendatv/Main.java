@@ -7,7 +7,15 @@ import com.raulrh.tiendatv.gui.TelevisionModel;
 import com.raulrh.tiendatv.gui.Window;
 import com.raulrh.tiendatv.util.Preferences;
 
+/**
+ * The type Main.
+ */
 public class Main {
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         Preferences preferences = Preferences.getInstance();
         if (preferences.isDarkMode()) {

@@ -14,34 +14,72 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * The type Television model.
+ */
 public class TelevisionModel {
    private final Window window;
    private final ArrayList<Television> televisions;
 
+   /**
+    * Instantiates a new Television model.
+    *
+    * @param window the window
+    */
    public TelevisionModel(Window window) {
       this.window = window;
       this.televisions = new ArrayList<>();
    }
 
+   /**
+    * Gets televisions.
+    *
+    * @return the televisions
+    */
    public ArrayList<Television> getTelevisions() {
       return televisions;
    }
 
+   /**
+    * Add television.
+    *
+    * @param television the television
+    */
    public void addTelevision(Television television) {
       televisions.add(television);
       window.defaultListModel.addElement(television);
    }
 
+   /**
+    * Remove television.
+    *
+    * @param television the television
+    */
    public void removeTelevision(Television television) {
       televisions.remove(television);
       window.defaultListModel.removeElement(television);
    }
 
+   /**
+    * Create television instance television.
+    *
+    * @param selectedClass the selected class
+    * @param values        the values
+    * @return the television
+    * @throws ReflectiveOperationException the reflective operation exception
+    */
    public Television createTelevisionInstance(Class<?> selectedClass, Object[] values) throws ReflectiveOperationException {
       Object[] constructorArgs = {values};
       return (Television) selectedClass.getConstructor(Object[].class).newInstance(constructorArgs);
    }
 
+   /**
+    * Update television instance.
+    *
+    * @param television the television
+    * @param values     the values
+    * @throws ReflectiveOperationException the reflective operation exception
+    */
    public void updateTelevisionInstance(Television television, Object[] values) throws ReflectiveOperationException {
       List<Field> fields = new ArrayList<>(Arrays.asList(television.getClass().getSuperclass().getDeclaredFields()));
       fields.addAll(Arrays.asList(television.getClass().getDeclaredFields()));
@@ -51,11 +89,20 @@ public class TelevisionModel {
       }
    }
 
+   /**
+    * Exists television boolean.
+    *
+    * @param television the television
+    * @return the boolean
+    */
    public boolean existsTelevision(Television television) {
       return televisions.stream().anyMatch(tv -> tv.getMarca().equalsIgnoreCase(television.getMarca())
               && tv.getModelo().equalsIgnoreCase(television.getModelo()));
    }
 
+   /**
+    * Save to xml.
+    */
    public void saveToXML() {
       try {
          JnaFileChooser fc = new JnaFileChooser();
@@ -73,6 +120,9 @@ public class TelevisionModel {
       }
    }
 
+   /**
+    * Load from xml.
+    */
    public void loadFromXML() {
       try {
          JnaFileChooser fc = new JnaFileChooser();

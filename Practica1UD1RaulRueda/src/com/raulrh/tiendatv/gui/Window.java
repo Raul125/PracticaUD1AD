@@ -8,6 +8,9 @@ import java.awt.*;
 import java.io.IOException;
 import java.util.Objects;
 
+/**
+ * The type Window.
+ */
 public class Window {
     public JPanel mainPanel;
     public JPanel topPanel;
@@ -27,12 +30,16 @@ public class Window {
     public JLabel titleLabel;
     public JButton eliminarButton;
     public JButton editarButton;
+
     public JList<Television> tvJlist;
 
     public JFrame frame;
 
     public final DefaultListModel<Television> defaultListModel;
 
+    /**
+     * Instantiates a new Window.
+     */
     public Window() {
         this.frame = initializeFrame();
         this.defaultListModel = new DefaultListModel<>();

@@ -10,7 +10,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * The type Television info window.
+ */
 public class TelevisionInfoWindow extends JFrame {
+    /**
+     * Instantiates a new Television info window.
+     *
+     * @param television the television
+     */
     public TelevisionInfoWindow(Television television) {
         setTitle("Detalles del Televisor");
         setSize(300, 350);
