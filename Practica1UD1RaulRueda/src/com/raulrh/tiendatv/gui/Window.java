@@ -5,6 +5,7 @@ import com.formdev.flatlaf.FlatIntelliJLaf;
 import com.github.lgooddatepicker.components.DatePicker;
 import com.raulrh.tiendatv.Main;
 import com.raulrh.tiendatv.base.*;
+import com.raulrh.tiendatv.util.Preferences;
 import com.raulrh.tiendatv.util.Util;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
@@ -12,7 +13,6 @@ import jakarta.xml.bind.Marshaller;
 import jakarta.xml.bind.Unmarshaller;
 import jnafilechooser.api.JnaFileChooser;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -20,7 +20,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.io.File;
-import java.io.IOException;
 
 public class Window {
     public JPanel mainPanel;
@@ -49,7 +48,7 @@ public class Window {
     private final TelevisionModel televisionModel;
     public final DefaultListModel<Television> defaultListModel;
 
-    private boolean isDarkMode;
+    private static final Preferences preferences = Preferences.getInstance();
 
     public Window() {
         this.frame = initializeFrame();
@@ -57,7 +56,6 @@ public class Window {
         this.televisionModel = new TelevisionModel(this);
         this.defaultListModel = new DefaultListModel<>();
 
-        isDarkMode = Main.preferences.isDarkMode();
         setupUI();
         initializeRadioButtonListeners();
         initializeActionListeners();
@@ -71,13 +69,13 @@ public class Window {
             public void windowClosing(java.awt.event.WindowEvent windowEvent) {
                 int result = Util.showConfirm("¿Desea cerrar la aplicación?", "Salir");
                 if (result == JOptionPane.OK_OPTION) {
-                    Main.savePreferences(Main.preferences);
+                    Preferences.savePreferences();
                     System.exit(0);
                 }
             }
         });
 
-        ImageIcon img = new ImageIcon("images/tv.png");
+        ImageIcon img = new ImageIcon("images/television.png");
         frame.setIconImage(img.getImage());
 
         frame.setSize(600, 600);
@@ -123,6 +121,7 @@ public class Window {
         importarButton.addActionListener(e -> loadFromXML());
         exportarButton.addActionListener(e -> saveToXML());
         toggleMode.addActionListener(e -> {
+            boolean isDarkMode = preferences.isDarkMode();
             if (isDarkMode) {
                 FlatIntelliJLaf.setup();
                 toggleMode.setText("Modo Oscuro");
@@ -132,8 +131,7 @@ public class Window {
             }
 
             FlatIntelliJLaf.updateUI();
-            isDarkMode = !isDarkMode;
-            Main.preferences.setDarkMode(isDarkMode);
+            preferences.setDarkMode(!isDarkMode);
         });
 
         tvJlist.addMouseListener(new MouseAdapter() {

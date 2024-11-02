@@ -51,7 +51,7 @@
               <forms/>
             </constraints>
             <properties>
-              <text value="GamingTV"/>
+              <text value="TV Gaming"/>
             </properties>
           </component>
           <component id="3c41a" class="javax.swing.JRadioButton" binding="curvedTVRadioButton" default-binding="true">
@@ -60,7 +60,7 @@
               <forms/>
             </constraints>
             <properties>
-              <text value="CurvedTV"/>
+              <text value="TV Curva"/>
             </properties>
           </component>
           <component id="251fc" class="javax.swing.JLabel" binding="titleLabel">
