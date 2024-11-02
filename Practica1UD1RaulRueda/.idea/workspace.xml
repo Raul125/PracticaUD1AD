@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="432a8933-c54c-4649-9c0c-2dec59fd47d7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/angus_activation.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/intellij-javadocs-4.0.1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/JnaFileChooser.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/LGoodDatePicker_11_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/angus_activation.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/flatlaf_3_5_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/gson_2_11_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/gson_2_11_0__2_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jgoodies_common_1_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jna_5_13_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1UD1RaulRueda.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/JnaFileChooser.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/LGoodDatePicker-11.2.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/flatlaf-3.5.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/gson-2.11.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/jaxb/angus-activation.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/jaxb/jakarta.activation-api.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/jaxb/jakarta.xml.bind-api.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/jaxb/jaxb-core.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/jaxb/jaxb-impl.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/jaxb/jaxb-jxc.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/jaxb/jaxb-xjc.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/jgoodies-common-1.8.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/jgoodies-forms-1.8.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/jna-5.13.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferences.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/base/CurvedTelevision.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/base/GamingTelevision.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/base/Preferences.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/base/SmartTelevision.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/base/Television.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/base/TelevisionList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/base/enums/SistemaOperativo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/base/enums/TipoPantalla.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/ReflectionFields.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/TelevisionInfoWindow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/TelevisionModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/Window.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/Window.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/util/LocalDateAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/util/Util.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/televisiones.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2oIMRLcSytoDtMNTz7j9YT8UORU" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/jorge/Desktop/Programar/GitHub/PracticaUD1AD/Practica1UD1RaulRueda",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="432a8933-c54c-4649-9c0c-2dec59fd47d7" name="Changes" comment="" />
+      <created>1730552627140</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1730552627140</updated>
+      <workItem from="1730552628149" duration="91000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -12,6 +12,7 @@ import jakarta.xml.bind.Marshaller;
 import jakarta.xml.bind.Unmarshaller;
 import jnafilechooser.api.JnaFileChooser;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -19,6 +20,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.io.File;
+import java.io.IOException;
 
 public class Window {
     public JPanel mainPanel;
@@ -36,6 +38,8 @@ public class Window {
     private JButton exportarButton;
     private JButton toggleMode;
     private JLabel titleLabel;
+    private JButton eliminarButton1;
+    private JButton editarButton;
     public ButtonGroup televisionType;
     public JFrame frame;
 
@@ -65,10 +69,16 @@ public class Window {
         frame.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-                Main.savePreferences(Main.preferences);
-                System.exit(0);
+                int result = Util.showConfirm("¿Desea cerrar la aplicación?", "Salir");
+                if (result == JOptionPane.OK_OPTION) {
+                    Main.savePreferences(Main.preferences);
+                    System.exit(0);
+                }
             }
         });
+
+        ImageIcon img = new ImageIcon("images/tv.png");
+        frame.setIconImage(img.getImage());
 
         frame.setSize(600, 600);
         frame.setLocationRelativeTo(null);
