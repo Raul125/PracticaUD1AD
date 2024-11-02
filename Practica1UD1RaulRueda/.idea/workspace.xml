@@ -8,56 +8,11 @@
       <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/intellij-javadocs-4.0.1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/JnaFileChooser.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/LGoodDatePicker_11_2_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/angus_activation.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/flatlaf_3_5_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/gson_2_11_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/gson_2_11_0__2_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jgoodies_common_1_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jna_5_13_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Practica1UD1RaulRueda.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/JnaFileChooser.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/LGoodDatePicker-11.2.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/flatlaf-3.5.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/gson-2.11.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/jaxb/angus-activation.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/jaxb/jakarta.activation-api.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/jaxb/jakarta.xml.bind-api.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/jaxb/jaxb-core.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/jaxb/jaxb-impl.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/jaxb/jaxb-jxc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/jaxb/jaxb-xjc.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/jgoodies-common-1.8.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/jgoodies-forms-1.8.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/jna-5.13.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/preferences.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/base/CurvedTelevision.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/base/GamingTelevision.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/base/Preferences.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/base/SmartTelevision.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/base/Television.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/base/TelevisionList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/base/enums/SistemaOperativo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/base/enums/TipoPantalla.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/ReflectionFields.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/TelevisionInfoWindow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/TelevisionModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/Window.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/Window.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/util/LocalDateAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/util/Util.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/televisiones.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PracticaUD1AD.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/Window.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/Window.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/Window.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/util/LocalDateAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/raulrh/tiendatv/util/LocalDateAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/util/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/raulrh/tiendatv/util/Util.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +32,6 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
@@ -105,7 +59,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1730552627140</updated>
-      <workItem from="1730552628149" duration="91000" />
+      <workItem from="1730552628149" duration="18000" />
     </task>
     <servers />
   </component>
