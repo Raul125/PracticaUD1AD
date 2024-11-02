@@ -10,7 +10,10 @@ import java.io.IOException;
 
 public class Preferences {
     private static Preferences instance;
-    private static final String FILE_PATH = "preferences.json";
+    private static final String FILE_NAME = "preferences.json";
+    private static final String FOLDER_NAME = "TiendaTV";
+    private static final String APPDATA_PATH = System.getenv("APPDATA");
+    private static final String FILE_PATH = APPDATA_PATH + File.separator + FOLDER_NAME + File.separator + FILE_NAME;
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
     private boolean darkMode;
@@ -49,6 +52,11 @@ public class Preferences {
     }
 
     public static void savePreferences() {
+        File folder = new File(APPDATA_PATH + File.separator + FOLDER_NAME);
+        if (!folder.exists() && !folder.mkdir()) {
+            throw new RuntimeException("No se pudo crear la carpeta de configuración");
+        }
+
         try (FileWriter writer = new FileWriter(FILE_PATH)) {
             GSON.toJson(getInstance(), writer);
         } catch (IOException e) {

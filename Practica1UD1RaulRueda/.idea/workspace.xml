@@ -1,21 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Practica1UD1RaulRueda:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="432a8933-c54c-4649-9c0c-2dec59fd47d7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/images/television.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Practica1UD1RaulRueda_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/TelevisionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/gson_2_11_0__2_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jgoodies_common_1_8_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jgoodies_common_1_8_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preferences.json" beforeDir="false" afterPath="$PROJECT_DIR$/preferences.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practica1UD1RaulRueda.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Practica1UD1RaulRueda.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/television.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/television.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preferences.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/raulrh/tiendatv/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/base/Preferences.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/raulrh/tiendatv/util/Preferences.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/ReflectionFields.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/ReflectionFields.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/TelevisionInfoWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/TelevisionInfoWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/TelevisionModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/TelevisionModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/Window.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/Window.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/Window.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/util/Preferences.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/raulrh/tiendatv/util/Preferences.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/televisiones.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -32,6 +55,7 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/jorge/Desktop/Programar/GitHub/PracticaUD1AD/Practica1UD1RaulRueda",
@@ -41,8 +65,9 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.proportion": "0.15527344",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -68,7 +93,9 @@
       <option name="presentableId" value="Default" />
       <updated>1730552627140</updated>
       <workItem from="1730552628149" duration="18000" />
-      <workItem from="1730552929440" duration="721000" />
+      <workItem from="1730552929440" duration="12278000" />
+      <workItem from="1730570296000" duration="299000" />
+      <workItem from="1730571692142" duration="2926000" />
     </task>
     <servers />
   </component>

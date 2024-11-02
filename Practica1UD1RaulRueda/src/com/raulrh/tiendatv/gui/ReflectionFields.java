@@ -20,12 +20,12 @@ public class ReflectionFields {
         fieldList = new ArrayList<>();
     }
 
-    public void createFields() {
+    public void createFields(Class<?> selectedClass) {
         window.fieldsPanel.removeAll();
         fieldList.clear();
 
         List<Field> televisionFields = new ArrayList<>(Arrays.asList(Television.class.getDeclaredFields()));
-        televisionFields.addAll(Arrays.asList(window.selectedClass.getDeclaredFields()));
+        televisionFields.addAll(Arrays.asList(selectedClass.getDeclaredFields()));
 
         for (Field field : televisionFields) {
             JLabel label = new JLabel(Util.transformString(field.getName()));
@@ -50,7 +50,7 @@ public class ReflectionFields {
         } else if (type.isEnum()) {
             return new JComboBox<>(type.getEnumConstants());
         } else if (type == double.class) {
-            return new JSpinner(new SpinnerNumberModel(0.0, (double) Integer.MIN_VALUE, (double) Integer.MAX_VALUE, 0.1));
+            return new JSpinner(new SpinnerNumberModel(0.0, Integer.MIN_VALUE, Integer.MAX_VALUE, 0.1));
         } else {
             return new JSpinner(new SpinnerNumberModel());
         }
