@@ -8,45 +8,47 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.LocalDate;
 
 /**
- * The type Television.
+ * The Television class represents a television with various attributes such as
+ * brand, model, screen size, price, refresh rate, launch date, and screen type.
+ * It provides constructors, getters, and setters for managing the television's
+ * properties. This class is also suitable for XML serialization using JAXB.
  */
 public class Television {
-    /**
-     * The Marca.
-     */
+
+    /** The brand of the television. */
     protected String marca;
-    /**
-     * The Modelo.
-     */
+
+    /** The model of the television. */
     protected String modelo;
-    /**
-     * The Medidas pantalla.
-     */
+
+    /** The screen size of the television in inches. */
     protected int medidasPantalla;
-    /**
-     * The Precio.
-     */
+
+    /** The price of the television. */
     protected double precio;
-    /**
-     * The Tasa refresco.
-     */
+
+    /** The refresh rate of the television in Hz. */
     protected int tasaRefresco;
 
-    /**
-     * The Fecha lanzamiento.
-     */
+    /** The launch date of the television. */
     @XmlJavaTypeAdapter(LocalDateAdapter.class)
     protected LocalDate fechaLanzamiento;
 
-    /**
-     * The Tipo pantalla.
-     */
+    /** The screen type of the television. */
     protected TipoPantalla tipoPantalla;
 
     /**
-     * Instantiates a new Television.
+     * Constructs a Television object with the specified values.
      *
-     * @param values the values
+     * @param values an array of values to initialize the Television object.
+     *               The array should contain:
+     *               [0] String marca,
+     *               [1] String modelo,
+     *               [2] Integer medidasPantalla,
+     *               [3] Double precio,
+     *               [4] Integer tasaRefresco,
+     *               [5] LocalDate fechaLanzamiento,
+     *               [6] TipoPantalla tipoPantalla
      */
     public Television(Object[] values) {
         this.marca = (String) values[0];
@@ -58,106 +60,104 @@ public class Television {
         this.tipoPantalla = (TipoPantalla) values[6];
     }
 
-    /**
-     * Instantiates a new Television.
-     */
+    /** Default constructor required for JAXB. */
     public Television() {
     }
 
     /**
-     * Gets marca.
+     * Gets the brand of the television.
      *
-     * @return the marca
+     * @return the brand of the television
      */
     public String getMarca() {
         return marca;
     }
 
     /**
-     * Sets marca.
+     * Sets the brand of the television.
      *
-     * @param marca the marca
+     * @param marca the brand to set
      */
     public void setMarca(String marca) {
         this.marca = marca;
     }
 
     /**
-     * Gets modelo.
+     * Gets the model of the television.
      *
-     * @return the modelo
+     * @return the model of the television
      */
     public String getModelo() {
         return modelo;
     }
 
     /**
-     * Sets modelo.
+     * Sets the model of the television.
      *
-     * @param modelo the modelo
+     * @param modelo the model to set
      */
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
 
     /**
-     * Gets medidas pantalla.
+     * Gets the screen size of the television.
      *
-     * @return the medidas pantalla
+     * @return the screen size in inches
      */
     public int getMedidasPantalla() {
         return medidasPantalla;
     }
 
     /**
-     * Sets medidas pantalla.
+     * Sets the screen size of the television.
      *
-     * @param medidasPantalla the medidas pantalla
+     * @param medidasPantalla the screen size to set in inches
      */
     public void setMedidasPantalla(int medidasPantalla) {
         this.medidasPantalla = medidasPantalla;
     }
 
     /**
-     * Gets precio.
+     * Gets the price of the television.
      *
-     * @return the precio
+     * @return the price of the television
      */
     public double getPrecio() {
         return precio;
     }
 
     /**
-     * Sets precio.
+     * Sets the price of the television.
      *
-     * @param precio the precio
+     * @param precio the price to set
      */
     public void setPrecio(double precio) {
         this.precio = precio;
     }
 
     /**
-     * Gets tasa refresco.
+     * Gets the refresh rate of the television.
      *
-     * @return the tasa refresco
+     * @return the refresh rate in Hz
      */
     public int getTasaRefresco() {
         return tasaRefresco;
     }
 
     /**
-     * Sets tasa refresco.
+     * Sets the refresh rate of the television.
      *
-     * @param tasaRefresco the tasa refresco
+     * @param tasaRefresco the refresh rate to set in Hz
      */
     public void setTasaRefresco(int tasaRefresco) {
         this.tasaRefresco = tasaRefresco;
     }
 
     /**
-     * Gets fecha lanzamiento.
+     * Gets the launch date of the television.
      *
-     * @return the fecha lanzamiento
+     * @return the launch date
      */
     @XmlTransient
     public LocalDate getFechaLanzamiento() {
@@ -165,16 +165,16 @@ public class Television {
     }
 
     /**
-     * Sets fecha lanzamiento.
+     * Sets the launch date of the television.
      *
-     * @param fechaLanzamiento the fecha lanzamiento
+     * @param fechaLanzamiento the launch date to set
      */
     public void setFechaLanzamiento(LocalDate fechaLanzamiento) {
         this.fechaLanzamiento = fechaLanzamiento;
     }
 
     /**
-     * Gets screen type.
+     * Gets the screen type of the television.
      *
      * @return the screen type
      */
@@ -183,14 +183,19 @@ public class Television {
     }
 
     /**
-     * Sets screen type.
+     * Sets the screen type of the television.
      *
-     * @param tipoPantalla the tipo pantalla
+     * @param tipoPantalla the screen type to set
      */
     public void setScreenType(TipoPantalla tipoPantalla) {
         this.tipoPantalla = tipoPantalla;
     }
 
+    /**
+     * Returns a string representation of the Television object.
+     *
+     * @return a string containing the brand and model of the television
+     */
     @Override
     public String toString() {
         return " - Marca: " + marca + ", Modelo: " + modelo;

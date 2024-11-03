@@ -3,37 +3,42 @@ package com.raulrh.tiendatv.util;
 import javax.swing.*;
 
 /**
- * The type Util.
+ * Utility class for common UI-related operations, such as displaying error messages,
+ * showing confirmation dialogs, and transforming strings.
  */
 public class Util {
+
     /**
-     * Show error.
+     * Displays an error message in a dialog.
      *
-     * @param mensaje the mensaje
+     * @param message The error message to display.
      */
-    public static void showError(String mensaje) {
-        JOptionPane.showMessageDialog(null, mensaje, "Error", JOptionPane.ERROR_MESSAGE);
+    public static void showError(String message) {
+        JOptionPane.showMessageDialog(null, message, "Error", JOptionPane.ERROR_MESSAGE);
     }
 
     /**
-     * Show confirm int.
+     * Shows a confirmation dialog with "Yes" and "No" options.
      *
-     * @param mensaje the mensaje
-     * @param titulo  the titulo
-     * @return the int
+     * @param message The message to display in the dialog.
+     * @param title   The title of the dialog window.
+     * @return An integer representing the user's choice:
+     *         0 for "Yes" and 1 for "No".
      */
-    public static int showConfirm(String mensaje, String titulo) {
+    public static int showConfirm(String message, String title) {
         Object[] options = { "Si", "No" };
-        return JOptionPane.showOptionDialog(null, mensaje, titulo,
+        return JOptionPane.showOptionDialog(null, message, title,
                 JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null,
                 options, options[0]);
     }
 
     /**
-     * Transform string string.
+     * Transforms a camelCase or PascalCase string to a space-separated,
+     * capitalized form.
      *
-     * @param input the input
-     * @return the string
+     * @param input The input string to transform.
+     * @return A new string with spaces before each uppercase letter,
+     *         with the first letter capitalized.
      */
     public static String transformString(String input) {
         String[] words = input.split("(?=[A-Z])");

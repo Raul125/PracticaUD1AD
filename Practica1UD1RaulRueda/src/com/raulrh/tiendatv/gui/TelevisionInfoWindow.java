@@ -11,13 +11,16 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * The type Television info window.
+ * A GUI window that displays detailed information about a specified television.
+ * This window is intended to show the attributes of a Television object in a
+ * scrollable, user-friendly format.
  */
 public class TelevisionInfoWindow extends JFrame {
+
     /**
-     * Instantiates a new Television info window.
+     * Constructs a TelevisionInfoWindow with the specified television information.
      *
-     * @param television the television
+     * @param television the Television object whose details are displayed in this window.
      */
     public TelevisionInfoWindow(Television television) {
         setTitle("Detalles del Televisor");
@@ -44,6 +47,14 @@ public class TelevisionInfoWindow extends JFrame {
         add(mainPanel);
     }
 
+    /**
+     * Populates the infoPanel with fields of the specified Television object.
+     * Each field of the Television (and its superclass) is displayed in a label
+     * with its corresponding value.
+     *
+     * @param television the Television object whose fields are displayed.
+     * @param infoPanel  the JPanel to which each field and its value are added.
+     */
     private void addFields(Television television, JPanel infoPanel) {
         List<Field> fields = new ArrayList<>(Arrays.asList(television.getClass().getSuperclass().getDeclaredFields()));
         fields.addAll(Arrays.asList(television.getClass().getDeclaredFields()));
@@ -58,10 +69,7 @@ public class TelevisionInfoWindow extends JFrame {
                 fieldPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 
                 JLabel fieldLabel = new JLabel(Util.transformString(field.getName()) + ": ");
-                fieldLabel.setFont(new Font("Arial", Font.BOLD, 11));
-
                 JLabel valueLabel = new JLabel(value != null ? value.toString() : "N/A");
-                valueLabel.setFont(new Font("Arial", Font.PLAIN, 11));
 
                 fieldPanel.add(fieldLabel, BorderLayout.WEST);
                 fieldPanel.add(valueLabel, BorderLayout.CENTER);

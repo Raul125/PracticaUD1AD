@@ -9,7 +9,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 /**
- * The type Preferences.
+ * Singleton class for managing application preferences, such as dark mode settings.
+ * The preferences are saved and loaded from a JSON file in the user's APPDATA directory.
  */
 public class Preferences {
     private static Preferences instance;
@@ -22,34 +23,34 @@ public class Preferences {
     private boolean darkMode;
 
     /**
-     * Instantiates a new Preferences.
+     * Default constructor. Initializes a new Preferences instance with default values.
      */
     public Preferences() {
-
     }
 
     /**
-     * Is dark mode boolean.
+     * Returns the dark mode setting.
      *
-     * @return the boolean
+     * @return {@code true} if dark mode is enabled; {@code false} otherwise.
      */
     public boolean isDarkMode() {
         return darkMode;
     }
 
     /**
-     * Sets dark mode.
+     * Sets the dark mode preference.
      *
-     * @param darkMode the dark mode
+     * @param darkMode {@code true} to enable dark mode; {@code false} to disable it.
      */
     public void setDarkMode(boolean darkMode) {
         this.darkMode = darkMode;
     }
 
     /**
-     * Gets instance.
+     * Returns the singleton instance of the Preferences class.
+     * If no instance exists, it loads preferences from file.
      *
-     * @return the instance
+     * @return The singleton instance of Preferences.
      */
     public static Preferences getInstance() {
         if (instance == null) {
@@ -59,6 +60,12 @@ public class Preferences {
         return instance;
     }
 
+    /**
+     * Loads preferences from the JSON file. If the file does not exist or cannot be read,
+     * it returns a new Preferences instance with default values.
+     *
+     * @return A Preferences instance loaded from file or a new instance if the file cannot be read.
+     */
     private static Preferences loadPreferences() {
         File file = new File(FILE_PATH);
         if (!file.exists()) {
@@ -73,12 +80,13 @@ public class Preferences {
     }
 
     /**
-     * Save preferences.
+     * Saves the current preferences to the JSON file. Creates the folder if it does not exist.
+     * Throws a RuntimeException if the folder cannot be created or if there is an error saving the file.
      */
     public static void savePreferences() {
         File folder = new File(APPDATA_PATH + File.separator + FOLDER_NAME);
         if (!folder.exists() && !folder.mkdir()) {
-            throw new RuntimeException("No se pudo crear la carpeta de configuración");
+            throw new RuntimeException("Could not create the configuration folder");
         }
 
         try (FileWriter writer = new FileWriter(FILE_PATH)) {

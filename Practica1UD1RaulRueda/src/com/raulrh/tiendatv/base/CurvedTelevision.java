@@ -1,46 +1,61 @@
 package com.raulrh.tiendatv.base;
 
 /**
- * The type Curved television.
+ * The CurvedTelevision class represents a curved television that extends the
+ * Television class with an additional attribute for curvature.
  */
 public class CurvedTelevision extends Television {
+
+    /** The degree of curvature of the curved television. */
     private int gradosCurvatura;
 
     /**
-     * Instantiates a new Curved television.
+     * Constructs a CurvedTelevision object with the specified values.
      *
-     * @param values the values
+     * @param values an array of values to initialize the CurvedTelevision object.
+     *               The array should contain:
+     *               [0] String marca,
+     *               [1] String modelo,
+     *               [2] Integer medidasPantalla,
+     *               [3] Double precio,
+     *               [4] Integer tasaRefresco,
+     *               [5] LocalDate fechaLanzamiento,
+     *               [6] TipoPantalla tipoPantalla,
+     *               [7] Integer gradosCurvatura
      */
     public CurvedTelevision(Object[] values) {
         super(values);
         this.gradosCurvatura = (Integer) values[7];
     }
 
-    /**
-     * Instantiates a new Curved television.
-     */
+    /** Default constructor required for JAXB. */
     public CurvedTelevision() {
 
     }
 
     /**
-     * Gets grados curvatura.
+     * Gets the degree of curvature of the curved television.
      *
-     * @return the grados curvatura
+     * @return the degree of curvature
      */
     public int getGradosCurvatura() {
         return gradosCurvatura;
     }
 
     /**
-     * Sets grados curvatura.
+     * Sets the degree of curvature of the curved television.
      *
-     * @param gradosCurvatura the grados curvatura
+     * @param gradosCurvatura the degree of curvature to set
      */
     public void setGradosCurvatura(int gradosCurvatura) {
         this.gradosCurvatura = gradosCurvatura;
     }
 
+    /**
+     * Returns a string representation of the CurvedTelevision object.
+     *
+     * @return a string containing information about the curved television
+     */
     @Override
     public String toString() {
         return "Televisión curva " + super.toString();

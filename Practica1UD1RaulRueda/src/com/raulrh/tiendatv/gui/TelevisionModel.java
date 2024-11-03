@@ -15,16 +15,17 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * The type Television model.
+ * Model class for managing a list of televisions. Handles adding, removing,
+ * updating, and XML serialization/deserialization of television objects.
  */
 public class TelevisionModel {
    private final Window window;
    private final ArrayList<Television> televisions;
 
    /**
-    * Instantiates a new Television model.
+    * Constructs a TelevisionModel with a specified Window instance for GUI updates.
     *
-    * @param window the window
+    * @param window the Window instance associated with this model.
     */
    public TelevisionModel(Window window) {
       this.window = window;
@@ -32,18 +33,18 @@ public class TelevisionModel {
    }
 
    /**
-    * Gets televisions.
+    * Returns the list of televisions.
     *
-    * @return the televisions
+    * @return the ArrayList of Television objects.
     */
    public ArrayList<Television> getTelevisions() {
       return televisions;
    }
 
    /**
-    * Add television.
+    * Adds a television to the list and updates the GUI.
     *
-    * @param television the television
+    * @param television the Television object to add.
     */
    public void addTelevision(Television television) {
       televisions.add(television);
@@ -51,9 +52,9 @@ public class TelevisionModel {
    }
 
    /**
-    * Remove television.
+    * Removes a television from the list and updates the GUI.
     *
-    * @param television the television
+    * @param television the Television object to remove.
     */
    public void removeTelevision(Television television) {
       televisions.remove(television);
@@ -61,12 +62,12 @@ public class TelevisionModel {
    }
 
    /**
-    * Create television instance television.
+    * Creates an instance of a Television subclass with specified values.
     *
-    * @param selectedClass the selected class
-    * @param values        the values
-    * @return the television
-    * @throws ReflectiveOperationException the reflective operation exception
+    * @param selectedClass the class of Television to instantiate.
+    * @param values        the values to set in the Television instance.
+    * @return a new instance of the specified Television subclass.
+    * @throws ReflectiveOperationException if there is an error creating the instance.
     */
    public Television createTelevisionInstance(Class<?> selectedClass, Object[] values) throws ReflectiveOperationException {
       Object[] constructorArgs = {values};
@@ -74,11 +75,11 @@ public class TelevisionModel {
    }
 
    /**
-    * Update television instance.
+    * Updates an existing Television instance with new values.
     *
-    * @param television the television
-    * @param values     the values
-    * @throws ReflectiveOperationException the reflective operation exception
+    * @param television the Television instance to update.
+    * @param values     the new values to set in the Television.
+    * @throws ReflectiveOperationException if there is an error updating the instance.
     */
    public void updateTelevisionInstance(Television television, Object[] values) throws ReflectiveOperationException {
       List<Field> fields = new ArrayList<>(Arrays.asList(television.getClass().getSuperclass().getDeclaredFields()));
@@ -90,10 +91,10 @@ public class TelevisionModel {
    }
 
    /**
-    * Exists television boolean.
+    * Checks if a television with the same brand and model already exists in the list.
     *
-    * @param television the television
-    * @return the boolean
+    * @param television the Television to check for.
+    * @return {@code true} if a matching Television exists; {@code false} otherwise.
     */
    public boolean existsTelevision(Television television) {
       return televisions.stream().anyMatch(tv -> tv.getMarca().equalsIgnoreCase(television.getMarca())
@@ -101,7 +102,10 @@ public class TelevisionModel {
    }
 
    /**
-    * Save to xml.
+    * Saves the list of televisions to an XML file using JAXB.
+    * Opens a file chooser to select the file location.
+    *
+    * @throws RuntimeException if there is an error saving the file.
     */
    public void saveToXML() {
       try {
@@ -121,7 +125,10 @@ public class TelevisionModel {
    }
 
    /**
-    * Load from xml.
+    * Loads a list of televisions from an XML file using JAXB.
+    * Opens a file chooser to select the file.
+    *
+    * @throws RuntimeException if there is an error loading the file.
     */
    public void loadFromXML() {
       try {
@@ -139,6 +146,13 @@ public class TelevisionModel {
       }
    }
 
+   /**
+    * Deserializes a TelevisionList from an XML file.
+    *
+    * @param file the XML file to deserialize.
+    * @return the TelevisionList loaded from the XML file.
+    * @throws JAXBException if there is an error during deserialization.
+    */
    private TelevisionList deserializeFromXML(File file) throws JAXBException {
       JAXBContext context = JAXBContext.newInstance(TelevisionList.class);
       Unmarshaller unmarshaller = context.createUnmarshaller();

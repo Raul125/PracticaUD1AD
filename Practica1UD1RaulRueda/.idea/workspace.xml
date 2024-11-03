@@ -9,7 +9,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="432a8933-c54c-4649-9c0c-2dec59fd47d7" name="Changes" comment="" />
+    <list default="true" id="432a8933-c54c-4649-9c0c-2dec59fd47d7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/raulrh/tiendatv/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/base/CurvedTelevision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/raulrh/tiendatv/base/CurvedTelevision.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/base/GamingTelevision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/raulrh/tiendatv/base/GamingTelevision.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/base/SmartTelevision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/raulrh/tiendatv/base/SmartTelevision.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/base/Television.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/raulrh/tiendatv/base/Television.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/base/TelevisionList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/raulrh/tiendatv/base/TelevisionList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/base/enums/SistemaOperativo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/raulrh/tiendatv/base/enums/SistemaOperativo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/base/enums/TipoPantalla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/raulrh/tiendatv/base/enums/TipoPantalla.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/ReflectionFields.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/ReflectionFields.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/TelevisionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/TelevisionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/TelevisionInfoWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/TelevisionInfoWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/TelevisionModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/TelevisionModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/raulrh/tiendatv/gui/Window.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/util/LocalDateAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/raulrh/tiendatv/util/LocalDateAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/util/Preferences.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/raulrh/tiendatv/util/Preferences.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/raulrh/tiendatv/util/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/raulrh/tiendatv/util/Util.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,26 +51,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/jorge/Desktop/Programar/GitHub/PracticaUD1AD/Practica1UD1RaulRueda",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15527344",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jorge/Desktop/Practica1UD1RobertoArcusa&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15527344&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\jorge\Desktop\Programar\GitHub\PracticaUD1AD\Practica1UD1RaulRueda\images" />
@@ -77,7 +95,9 @@
       <workItem from="1730552628149" duration="18000" />
       <workItem from="1730552929440" duration="12278000" />
       <workItem from="1730570296000" duration="299000" />
-      <workItem from="1730571692142" duration="3233000" />
+      <workItem from="1730571692142" duration="3380000" />
+      <workItem from="1730635810060" duration="1507000" />
+      <workItem from="1730638385791" duration="3052000" />
     </task>
     <servers />
   </component>

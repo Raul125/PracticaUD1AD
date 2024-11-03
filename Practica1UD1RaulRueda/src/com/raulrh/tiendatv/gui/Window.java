@@ -9,7 +9,8 @@ import java.io.IOException;
 import java.util.Objects;
 
 /**
- * The type Window.
+ * Main window class for the television management application.
+ * Sets up the user interface with various panels, buttons, and a list for displaying televisions.
  */
 public class Window {
     public JPanel mainPanel;
@@ -38,7 +39,7 @@ public class Window {
     public final DefaultListModel<Television> defaultListModel;
 
     /**
-     * Instantiates a new Window.
+     * Constructs a Window instance, initializes the JFrame and UI components.
      */
     public Window() {
         this.frame = initializeFrame();
@@ -47,6 +48,12 @@ public class Window {
         setupUI();
     }
 
+    /**
+     * Initializes the main JFrame for the application, setting its properties such as
+     * size, icon, and location on the screen.
+     *
+     * @return The initialized JFrame object.
+     */
     private JFrame initializeFrame() {
         JFrame frame = new JFrame("Televisiones");
         try {
@@ -62,6 +69,10 @@ public class Window {
         return frame;
     }
 
+    /**
+     * Configures the user interface, setting up layout, borders, default selections,
+     * and linking the television list model to the JList component.
+     */
     private void setupUI() {
         titleLabel.putClientProperty("FlatLaf.styleClass", "h1");
 

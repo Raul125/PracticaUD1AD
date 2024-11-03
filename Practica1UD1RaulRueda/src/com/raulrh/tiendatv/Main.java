@@ -8,13 +8,13 @@ import com.raulrh.tiendatv.gui.Window;
 import com.raulrh.tiendatv.util.Preferences;
 
 /**
- * The type Main.
+ * The main class to start the application.
  */
 public class Main {
     /**
-     * The entry point of application.
+     * The main method to start the application.
      *
-     * @param args the input arguments
+     * @param args the command line arguments
      */
     public static void main(String[] args) {
         Preferences preferences = Preferences.getInstance();

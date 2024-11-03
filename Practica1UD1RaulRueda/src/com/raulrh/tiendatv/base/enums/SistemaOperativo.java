@@ -1,23 +1,19 @@
 package com.raulrh.tiendatv.base.enums;
 
 /**
- * The enum Sistema operativo.
+ * The SistemaOperativo enum represents the various operating systems
+ * that can be used in smart televisions.
  */
 public enum SistemaOperativo {
-    /**
-     * Androidtv sistema operativo.
-     */
+    /** Android TV operating system. */
     ANDROIDTV,
-    /**
-     * Tizen sistema operativo.
-     */
+
+    /** Tizen operating system used in Samsung smart TVs. */
     TIZEN,
-    /**
-     * Webos sistema operativo.
-     */
+
+    /** webOS operating system used in LG smart TVs. */
     WEBOS,
-    /**
-     * Saphi sistema operativo.
-     */
+
+    /** SAPHI operating system used in Philips smart TVs. */
     SAPHI
 }

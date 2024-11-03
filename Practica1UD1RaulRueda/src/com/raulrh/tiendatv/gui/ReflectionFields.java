@@ -12,19 +12,19 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * The type Reflection fields.
+ * The ReflectionFields class dynamically generates GUI components based on
+ * the fields of a given class, enabling the application to adapt to different
+ * Television types and their attributes. It reflects over the Television
+ * class and its subclasses to create corresponding input fields.
  */
 public class ReflectionFields {
     private final Window window;
-    /**
-     * The Field list.
-     */
     public final List<JComponent> fieldList;
 
     /**
-     * Instantiates a new Reflection fields.
+     * Constructs a ReflectionFields object for a specified application window.
      *
-     * @param window the window
+     * @param window the main application window containing the fields panel
      */
     public ReflectionFields(Window window) {
         this.window = window;
@@ -32,9 +32,12 @@ public class ReflectionFields {
     }
 
     /**
-     * Create fields.
+     * Creates input fields for each attribute of the specified class.
+     * Removes all existing fields from the panel, then dynamically adds
+     * new fields based on the attributes of the base Television class
+     * and the selected subclass.
      *
-     * @param selectedClass the selected class
+     * @param selectedClass the class for which input fields are created
      */
     public void createFields(Class<?> selectedClass) {
         window.fieldsPanel.removeAll();
@@ -56,6 +59,14 @@ public class ReflectionFields {
         window.fieldsPanel.repaint();
     }
 
+    /**
+     * Creates a GUI component appropriate for the specified field type.
+     * Handles different data types such as LocalDate, String, boolean,
+     * enums, and numbers to assign corresponding input elements.
+     *
+     * @param type the data type of the field
+     * @return a JComponent suitable for the specified type
+     */
     private JComponent createComponentForFieldType(Class<?> type) {
         if (type == LocalDate.class) {
             return new DatePicker();
@@ -69,23 +80,6 @@ public class ReflectionFields {
             return new JSpinner(new SpinnerNumberModel(0.0, Integer.MIN_VALUE, Integer.MAX_VALUE, 0.1));
         } else {
             return new JSpinner(new SpinnerNumberModel());
-        }
-    }
-
-    /**
-     * Clear fields.
-     */
-    public void clearFields() {
-        for (JComponent field : fieldList) {
-            if (field instanceof JTextField) {
-                ((JTextField) field).setText("");
-            } else if (field instanceof JCheckBox) {
-                ((JCheckBox) field).setSelected(false);
-            } else if (field instanceof JSpinner) {
-                ((JSpinner) field).setValue(0);
-            } else if (field instanceof DatePicker) {
-                ((DatePicker) field).setDate(null);
-            }
         }
     }
 }

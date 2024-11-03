@@ -1,23 +1,19 @@
 package com.raulrh.tiendatv.base.enums;
 
 /**
- * The enum Tipo pantalla.
+ * The TipoPantalla enum represents the various screen types
+ * that can be used in televisions.
  */
 public enum TipoPantalla {
-    /**
-     * Oled tipo pantalla.
-     */
+    /** Organic Light Emitting Diode (OLED) screen type. */
     OLED,
-    /**
-     * Amoled tipo pantalla.
-     */
+
+    /** Active Matrix Organic Light Emitting Diode (AMOLED) screen type. */
     AMOLED,
-    /**
-     * Qled tipo pantalla.
-     */
+
+    /** Quantum Dot Light Emitting Diode (QLED) screen type. */
     QLED,
-    /**
-     * Nanocell tipo pantalla.
-     */
+
+    /** Nano Cell display technology used in some LG televisions. */
     NANOCELL
 }
